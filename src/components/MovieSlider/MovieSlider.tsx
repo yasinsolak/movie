@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { MovieModule } from "../../model/movie";
 import { Card } from "../Card";
 import { Selector } from "../Selector";
@@ -19,7 +19,7 @@ const MovieSlider = ({selectorData}: MovieSliderProps) => {
     MovieAPI.get(active.toString()).then(e => setMovies(e.data.results))
   }, [active])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     let options = {
       root: scrollableRef.current,
       rootMargin: '0px 100px 0px 100px',
