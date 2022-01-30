@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { MovieSlider } from './components/MovieSlider';
+
+const popular = [
+  {
+    id:1,
+    title: 'Yayın Akışı'
+  },
+  {
+    id:2,
+    title: 'Televizyonda'
+  },
+  {
+    id:3,
+    title: 'Kiralık'
+  },
+  {
+    id:4,
+    title: 'Sinemalarda'
+  }
+]
+
+const filmTv = [
+  {
+    id:1,
+    title: 'Filmler'
+  },
+  {
+    id:2,
+    title: 'TV'
+  }
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MovieSlider selectorData={popular}/>
+      <MovieSlider selectorData={filmTv}/>
     </div>
   );
 }
